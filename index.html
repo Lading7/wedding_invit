@@ -790,6 +790,36 @@
                 display: block;
             }
 
+            /* Invitation Header Mobile Form */
+            .invitation-header {
+                padding: 0 5px;
+                margin-bottom: 2rem;
+            }
+            .intro-greeting {
+                font-size: 1.15rem;
+                margin-bottom: 1.5rem;
+            }
+            .families-container {
+                flex-wrap: nowrap !important; /* Force side-by-side */
+                gap: 0.3rem;
+                margin-bottom: 1.5rem;
+            }
+            .family-block {
+                min-width: unset;
+                flex: 1;
+            }
+            .family-block p {
+                font-size: 1.1rem; /* Scaled perfectly so both names fit horizontally */
+                line-height: 1.3;
+            }
+            .family-separator {
+                font-size: 1.8rem;
+                padding: 0 4px;
+            }
+            .invite-action {
+                font-size: 1.2rem;
+            }
+
             .hero-title {
                 font-size: 2.8rem;
             }
@@ -1345,6 +1375,37 @@
 
             100% {
                 transform: rotate(-25deg) scale(1.2);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .boho-calendar-wrapper {
+                padding: 1.5rem 1rem;
+                margin: 1.5rem 15px;
+                max-width: 100%;
+            }
+            .calendar-grid {
+                gap: 10px 2px;
+            }
+            .calendar-day {
+                width: 32px;
+                height: 32px;
+                font-size: 0.95rem;
+                padding: 4px 0;
+            }
+            .calendar-day.highlight::before {
+                width: 38px;
+                height: 38px;
+            }
+            .calendar-day-name {
+                font-size: 0.85rem;
+            }
+            .calendar-header h3 {
+                font-size: 1.8rem;
+            }
+            .calendar-dec-top-left svg,
+            .calendar-dec-bottom-right svg {
+                transform: scale(0.8);
             }
         }
     </style>
