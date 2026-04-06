@@ -1,0 +1,1761 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>علاء الدين ومشكاة - دعوة زفاف</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #FAF9F6;
+            --secondary-bg: #F5EBE1;
+            --accent-terracotta: #D37A68;
+            --accent-sage: #9AB098;
+            --text-main: #4A4A4A;
+            --text-light: #737373;
+            --font-script: 'Aref Ruqaa', serif;
+            --font-serif: 'Amiri', serif;
+            --font-sans: 'Cairo', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-main);
+            background-color: var(--primary-bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: var(--font-serif);
+            font-weight: 400;
+        }
+
+        .script-text {
+            font-family: var(--font-script);
+            color: var(--accent-terracotta);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(250, 249, 246, 0.95);
+            padding: 1.5rem 2rem;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-logo {
+            font-family: var(--font-script);
+            font-size: 2rem;
+            color: var(--accent-terracotta);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-terracotta);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(250, 249, 246, 0.6), rgba(250, 249, 246, 0.8)), url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            padding: 0 1rem;
+            position: relative;
+        }
+
+        .hero-tagline {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            animation: fadeInDown 1.5s ease;
+        }
+
+        .invitation-header {
+            margin: 0 auto 3rem auto;
+            max-width: 800px;
+            color: var(--text-main);
+            text-align: center;
+            animation: fadeInDown 1.8s ease;
+        }
+
+        .intro-greeting {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: #6a8268;
+            /* Darker shade of sage for better visibility */
+            margin-bottom: 2rem;
+        }
+
+        .families-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .family-block {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .family-block p {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        .family-block p:first-child {
+            font-weight: 500;
+            color: var(--accent-terracotta);
+        }
+
+        .family-separator {
+            font-family: var(--font-script);
+            font-size: 3.5rem;
+            color: var(--accent-gold);
+            padding: 0 1rem;
+        }
+
+        .invite-action {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            color: var(--text-main);
+            position: relative;
+            display: inline-block;
+        }
+
+        .invite-action::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 1px;
+            background-color: var(--accent-terracotta);
+            opacity: 0.5;
+        }
+
+        .hero-title {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-terracotta);
+            animation: fadeIn 2s ease;
+        }
+
+        .hero-date {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--accent-terracotta);
+            color: white;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            border-radius: 30px;
+        }
+
+        .btn:hover {
+            background-color: #B96353;
+            transform: translateY(-2px);
+        }
+
+        /* Sections General */
+        section {
+            padding: 6rem 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-family: var(--font-script);
+            font-size: 2.5rem;
+            color: var(--accent-sage);
+            margin-bottom: 3rem;
+        }
+
+        .divider {
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent-terracotta);
+            margin: 0 auto 3rem auto;
+        }
+
+        /* Our Story */
+        #story {
+            background-color: var(--primary-bg);
+            text-align: center;
+        }
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .story-img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .story-text p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        /* Wedding Events */
+        #events {
+            background-color: var(--secondary-bg);
+            position: relative;
+        }
+
+        .events-container {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .event-card {
+            background-color: var(--primary-bg);
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid var(--accent-terracotta);
+            transition: transform 0.3s;
+        }
+
+        .event-card:nth-child(2) {
+            border-top-color: var(--accent-sage);
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .event-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .event-date {
+            font-family: var(--font-sans);
+            font-weight: 500;
+            color: var(--accent-terracotta);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .event-time {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .event-location {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .event-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* Timeline */
+        #timeline {
+            background-color: var(--primary-bg);
+        }
+
+        .timeline-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background-color: var(--secondary-bg);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-time {
+            width: 50%;
+            text-align: left;
+            padding-left: 3rem;
+            padding-right: 0;
+            font-family: var(--font-sans);
+            font-weight: 500;
+            color: var(--accent-sage);
+            font-size: 1.2rem;
+        }
+
+        .timeline-content {
+            width: 50%;
+            padding-right: 3rem;
+            padding-left: 0;
+        }
+
+        .timeline-content h4 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            width: 16px;
+            height: 16px;
+            background-color: var(--accent-terracotta);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            border: 4px solid var(--primary-bg);
+        }
+
+        /* Location */
+        #location {
+            background-color: var(--secondary-bg);
+            text-align: center;
+        }
+
+        .map-container {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .map-box {
+            width: 100%;
+            max-width: 500px;
+            background: var(--primary-bg);
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .map-box h4 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-terracotta);
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #E0E0E0;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-family: var(--font-sans);
+            margin-bottom: 1rem;
+            background-image: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .map-placeholder::after {
+            content: 'عرض على الخريطة';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        .address-text {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* RSVP */
+        #rsvp {
+            background: linear-gradient(rgba(250, 249, 246, 0.9), rgba(250, 249, 246, 0.9)), url('https://images.unsplash.com/photo-1507504031003-b417219a0fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+            text-align: center;
+        }
+
+        .rsvp-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 3rem;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: right;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            background-color: var(--primary-bg);
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-terracotta);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            text-transform: none !important;
+        }
+
+        .event-attendance {
+            background: var(--secondary-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .event-attendance h5 {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-terracotta);
+        }
+
+        /* Polaroid Gallery (Cord Style) */
+        #gallery {
+            background-color: var(--primary-bg);
+            text-align: center;
+            position: relative;
+        }
+
+        .polaroid-cord-wrapper {
+            position: relative;
+            overflow-x: auto;
+            width: 100%;
+            /* hide scrollbar for elegance */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            cursor: pointer;
+        }
+
+        .polaroid-cord-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        .polaroid-track {
+            display: inline-flex;
+            flex-direction: row;
+            padding: 50px 30px 80px 30px;
+            gap: 25px;
+            /* Infinite cord built into track so it spans perfectly */
+            background-image: linear-gradient(rgba(164, 134, 113, 0.8), rgba(164, 134, 113, 0.8));
+            background-repeat: repeat-x;
+            background-size: 10px 3px;
+            background-position: left 60px;
+            min-width: min-content;
+        }
+
+        /* Buffer for RTL scrolling ends */
+        .polaroid-track::before,
+        .polaroid-track::after {
+            content: '';
+            min-width: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .polaroid-track {
+                padding: 40px 15px 60px 15px;
+                background-position: left 48px;
+            }
+
+            .polaroid-item {
+                width: 180px !important;
+                padding: 8px 8px 30px 8px !important;
+            }
+
+            .polaroid-item img {
+                height: 180px !important;
+            }
+
+            .pin {
+                top: -18px !important;
+                height: 30px !important;
+            }
+
+            .pin::after {
+                top: 14px !important;
+            }
+        }
+
+        .polaroid-item {
+            position: relative;
+            background: #fff;
+            padding: 12px 12px 40px 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            width: 260px;
+            flex-shrink: 0;
+            border-radius: 3px;
+            display: flex;
+            flex-direction: column;
+            z-index: 2;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .polaroid-item:hover {
+            transform: scale(1.03) rotate(0deg) !important;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        /* Alternating tilts */
+        .polaroid-item:nth-child(even) {
+            transform: rotate(3deg);
+            margin-top: 15px;
+        }
+
+        .polaroid-item:nth-child(odd) {
+            transform: rotate(-3deg);
+            margin-top: -5px;
+        }
+
+        .polaroid-item:nth-child(3n) {
+            transform: rotate(1deg);
+            margin-top: 5px;
+        }
+
+        .polaroid-item img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border: 1px solid #f4f4f4;
+        }
+
+        /* Clothespin */
+        .pin {
+            position: absolute;
+            top: -24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 40px;
+            background: #d4b595;
+            border-radius: 2px;
+            z-index: 3;
+            box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.1), 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .pin::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 5px;
+            height: 5px;
+            background: #8b6d51;
+            border-radius: 50%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: var(--primary-bg);
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .footer-names {
+            font-family: var(--font-script);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            color: #ddd;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 100%;
+                background-color: rgba(250, 249, 246, 0.98);
+                padding: 2rem 0;
+                text-align: center;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 0.8rem 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.8rem;
+            }
+
+            .timeline-wrapper::before {
+                right: 30px;
+                left: auto;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .timeline-time {
+                width: 100%;
+                text-align: right;
+                padding-right: 60px;
+                padding-left: 0;
+                margin-bottom: 0.5rem;
+            }
+
+            .timeline-content {
+                width: 100%;
+                text-align: right;
+                padding-right: 60px;
+                padding-left: 0;
+            }
+
+            .timeline-dot {
+                right: 30px;
+                left: auto;
+            }
+
+            section {
+                padding: 4rem 5%;
+            }
+
+            .rsvp-form {
+                padding: 2rem 1.5rem;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+        }
+
+        /* Intro Envelope Animation */
+        body.intro-active {
+            overflow: hidden;
+        }
+
+        #intro-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--primary-bg);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1), opacity 1.5s ease;
+            direction: ltr;
+            /* Keeps envelope geometry standard */
+        }
+
+        #intro-overlay.fade-out {
+            opacity: 0;
+            transform: translateY(-10px);
+            pointer-events: none;
+        }
+
+        .envelope-wrapper {
+            position: relative;
+            width: 340px;
+            height: 230px;
+            cursor: pointer;
+            perspective: 1200px;
+            animation: floatEnvelope 4s ease-in-out infinite;
+        }
+
+        @keyframes floatEnvelope {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .envelope-wrapper.open {
+            animation: none;
+        }
+
+        .envelope-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #e3d1c2;
+            border-radius: 5px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            z-index: 1;
+        }
+
+        .envelope-letter {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 310px;
+            height: 195px;
+            background: linear-gradient(to right, #e2ccb4 0%, #f4e4cf 15%, #fdf5e6 50%, #f4e4cf 85%, #e2ccb4 100%);
+            border-radius: 2px;
+            z-index: 2;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3), inset 0 0 30px rgba(139, 69, 19, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            text-align: center;
+            border: none;
+            pointer-events: none;
+        }
+
+        .envelope-letter::before,
+        .envelope-letter::after {
+            content: '';
+            position: absolute;
+            left: -5px;
+            right: -5px;
+            height: 12px;
+            background: linear-gradient(to bottom, #8a5a3a 0%, #a4714b 30%, #5c3a21 100%);
+            border-radius: 6px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .envelope-letter::before {
+            top: -2px;
+        }
+
+        .envelope-letter::after {
+            bottom: -2px;
+        }
+
+        @keyframes unrollScroll {
+            0% {
+                transform: translateY(0) scale(1);
+                z-index: 2;
+            }
+
+            30% {
+                transform: translateY(-300px) scale(1);
+                z-index: 2;
+            }
+
+            31% {
+                transform: translateY(-300px) scale(1);
+                z-index: 20;
+            }
+
+            100% {
+                transform: translateY(-110px) scale(1.35);
+                z-index: 20;
+            }
+        }
+
+        .letter-title {
+            font-family: var(--font-script);
+            color: var(--accent-terracotta);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .letter-text {
+            font-family: var(--font-serif);
+            font-size: 1rem;
+            color: var(--text-main);
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+        }
+
+        .letter-date {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            color: var(--accent-sage);
+            font-weight: 500;
+        }
+
+        .envelope-wrapper.open .envelope-letter {
+            animation: unrollScroll 3.5s ease-in-out forwards;
+            animation-delay: 0.6s;
+        }
+
+        .envelope-front {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .envelope-front-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-left: 170px solid transparent;
+            border-right: 170px solid transparent;
+            border-bottom: 115px solid #ecdbcc;
+            z-index: 4;
+            filter: drop-shadow(0 -3px 3px rgba(0, 0, 0, 0.05));
+        }
+
+        .envelope-front-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 170px solid #f2e2d5;
+            border-bottom: 115px solid transparent;
+            border-top: 115px solid transparent;
+            z-index: 3;
+        }
+
+        .envelope-front-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-right: 170px solid #f2e2d5;
+            border-bottom: 115px solid transparent;
+            border-top: 115px solid transparent;
+            z-index: 3;
+        }
+
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            transform-origin: top;
+            transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), z-index 0s;
+        }
+
+        .envelope-flap::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-left: 170px solid transparent;
+            border-right: 170px solid transparent;
+            border-top: 120px solid #decdbe;
+            filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.05));
+        }
+
+        .wax-seal {
+            position: absolute;
+            top: 120px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 55px;
+            height: 55px;
+            background-color: var(--accent-terracotta);
+            border-radius: 50%;
+            z-index: 6;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), inset 0 0 12px rgba(100, 20, 0, 0.3);
+            transition: opacity 0.4s, transform 0.4s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-family: var(--font-script);
+            font-size: 1.8rem;
+        }
+
+        .wax-seal::after {
+            content: '';
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 1px dotted rgba(255, 255, 255, 0.6);
+        }
+
+        .envelope-wrapper:hover .wax-seal {
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+
+        .envelope-wrapper.open .envelope-flap {
+            transform: rotateX(180deg);
+            z-index: 1;
+            transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), z-index 0s 0.6s;
+        }
+
+        .envelope-wrapper.open .wax-seal {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .envelope-text {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--font-script);
+            color: var(--accent-terracotta);
+            font-size: 1.8rem;
+            white-space: nowrap;
+            opacity: 1;
+            transition: opacity 0.5s;
+        }
+
+        .envelope-wrapper.open .envelope-text {
+            opacity: 0;
+        }
+
+        /* Butterflies Container */
+        #butterflies-container {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            z-index: 6;
+            pointer-events: none;
+        }
+
+        .butterfly {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 45px;
+            height: 45px;
+            opacity: 0;
+            transform-origin: center;
+            animation:
+                flyOut var(--duration) cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .butterfly .wing-container {
+            width: 100%;
+            height: 100%;
+            animation: flutter 0.4s infinite alternate ease-in-out;
+            transform-style: preserve-3d;
+        }
+
+        .butterfly svg {
+            width: 100%;
+            height: 100%;
+            fill: var(--color);
+            filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.2));
+            opacity: 0.9;
+        }
+
+        @keyframes flyOut {
+            0% {
+                opacity: 0;
+                transform: translate(0, 50px) scale(0.3) rotate(calc(var(--r) - 20deg));
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(var(--tx), var(--ty)) scale(1.2) rotate(calc(var(--r) + 40deg));
+            }
+        }
+
+        @keyframes flutter {
+            0% {
+                transform: rotate3d(0, 1, 0, -40deg) scaleY(1);
+            }
+
+            100% {
+                transform: rotate3d(0, 1, 0, 60deg) scaleY(0.8);
+            }
+        }
+
+        /* Boho Calendar Styles */
+        .boho-calendar-wrapper {
+            background-color: var(--primary-bg);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 420px;
+            margin: 2rem auto;
+            border: 1px solid rgba(211, 122, 104, 0.15);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .calendar-decoration {
+            position: absolute;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        .calendar-dec-top-left {
+            top: -10px;
+            left: -10px;
+            animation: flutterHeart 6s infinite alternate ease-in-out;
+        }
+
+        .calendar-dec-bottom-right {
+            bottom: -20px;
+            right: -20px;
+            animation: flutterHeartReverse 5s infinite alternate-reverse ease-in-out;
+        }
+
+        .calendar-header {
+            text-align: center;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-script);
+            color: var(--accent-terracotta);
+        }
+
+        .calendar-header h3 {
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 12px 5px;
+            text-align: center;
+            font-family: var(--font-sans);
+            margin-top: 1.5rem;
+        }
+
+        .calendar-day-name {
+            font-weight: 600;
+            color: var(--accent-sage);
+            font-size: 0.95rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(154, 176, 152, 0.2);
+            font-family: var(--font-serif);
+        }
+
+        .calendar-day {
+            padding: 8px 0;
+            font-size: 1.05rem;
+            color: var(--text-main);
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .calendar-day:hover:not(.empty) {
+            transform: scale(1.1);
+        }
+
+        .calendar-day.empty {
+            color: transparent;
+            pointer-events: none;
+        }
+
+        .calendar-day.highlight {
+            color: var(--text-main);
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .calendar-day.highlight::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 44px;
+            height: 44px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,15 C75,12 85,30 88,48 C91,65 80,85 55,88 C30,90 15,70 12,50 C10,30 25,15 50,18" fill="none" stroke="%23D37A68" stroke-width="3" stroke-linecap="round"/></svg>') center/contain no-repeat;
+            z-index: -1;
+        }
+
+        .calendar-day.highlight-1::after {
+            content: '♥';
+            position: absolute;
+            top: -10px;
+            right: -5px;
+            font-size: 14px;
+            color: var(--accent-terracotta);
+            opacity: 0.9;
+            animation: flutterHeart 2s infinite alternate ease-in-out;
+        }
+
+        .calendar-day.highlight-2::after {
+            content: '♥';
+            position: absolute;
+            top: -10px;
+            left: -5px;
+            font-size: 14px;
+            color: var(--accent-sage);
+            opacity: 0.9;
+            animation: flutterHeartReverse 2.5s infinite alternate ease-in-out;
+        }
+
+        @keyframes flutterHeart {
+            0% {
+                transform: rotate(15deg) scale(1);
+            }
+
+            100% {
+                transform: rotate(25deg) scale(1.2);
+            }
+        }
+
+        @keyframes flutterHeartReverse {
+            0% {
+                transform: rotate(-15deg) scale(1);
+            }
+
+            100% {
+                transform: rotate(-25deg) scale(1.2);
+            }
+        }
+    </style>
+</head>
+
+<body class="intro-active">
+
+    <!-- Intro Envelope Overlay -->
+    <div id="intro-overlay">
+        <div class="envelope-wrapper" id="envelope">
+            <div class="envelope-back"></div>
+            <div class="envelope-letter">
+                <div class="letter-title"
+                    style="font-size: 1.4rem; border-bottom: 1px solid rgba(211, 122, 104, 0.4); padding-bottom: 0.3rem; margin-bottom: 0.3rem;">
+                    بسم الله الرحمن الرحيم</div>
+                <div class="letter-title" style="margin-top: 0.3rem; margin-bottom: 0.3rem; font-size: 1rem;">علاء الدين
+                    ومشكاة</div>
+                <div class="letter-text" style="font-size: 0.85rem; margin-bottom: 0.3rem;">بكل حب وسرور، ندعوكم
+                    لمشاركتنا فرحة زفافنا.</div>
+                <div class="letter-date" style="font-size: 0.75rem;"> يومي 20 و 22 ماي 2026</div>
+            </div>
+            <div class="envelope-front">
+                <div class="envelope-front-left"></div>
+                <div class="envelope-front-right"></div>
+                <div class="envelope-front-bottom"></div>
+            </div>
+            <div class="envelope-flap"></div>
+            <div class="wax-seal">♥</div>
+            <div class="envelope-text">افتح الدعوة</div>
+            <div id="butterflies-container"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-logo">A & M</div>
+        <ul class="nav-links">
+            <li><a href="#hero">الرئيسية</a></li>
+            <li><a href="#story">قصتنا</a></li>
+            <li><a href="#events">الاحتفالات</a></li>
+            <li><a href="#timeline">الجدول الزمني</a></li>
+            <li><a href="#location">الموقع</a></li>
+            <li><a href="#rsvp">تأكيد الحضور</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="invitation-header">
+            <p class="intro-greeting">بعد إهدائكم عاطر التحية وأشرف السلام يتشرف</p>
+
+            <div class="families-container">
+                <div class="family-block">
+                    <p>السيد محمد جليّل</p>
+                    <p>وحرمه نزيهة سلّام</p>
+                </div>
+
+                <div class="family-separator">و</div>
+
+                <div class="family-block">
+                    <p>السيد سالم بن مسعود</p>
+                    <p>وحرمه ليلى الوريمي</p>
+                </div>
+            </div>
+
+            <p class="invite-action">بدعوتكم لحضور حفل زفاف ابنيهما</p>
+        </div>
+
+        <h1 class="hero-title script-text">علاء الدين ومشكاة</h1>
+        <p class="hero-date">20 و 22 ماي 2026</p>
+        <a href="#events" class="btn">اكتشف الاحتفالات</a>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="story" class="fade-in-section">
+        <div class="story-content">
+            <h2 class="section-title">قصتنا</h2>
+            <div class="divider"></div>
+            <p class="section-subtitle">كيف بدأ كل شيء...</p>
+            <div class="story-text">
+                <p>جمعنا العمل صدفة وجمعتنا القلوب إختيارا،
+                    فكتب القدر بداية قصة
+                    لم تكن في الحسبان...لكنها كانت الأجمل</p>
+                <p>لا يسعنا الانتظار للاحتفال بقصة حبنا مع الأشخاص الأهم بالنسبة لنا. </p>
+                <P>انضموا إلينا لنبدأ هذا الفصل
+                    الجديد الجميل معًا. </P>
+            </div>
+
+            <div class="boho-calendar-wrapper">
+                <div class="calendar-decoration calendar-dec-top-left">
+                    <svg width="40" height="40" viewBox="0 0 100 100">
+                        <path
+                            d="M50 80 C 20 50, 10 30, 30 15 C 45 5, 50 20, 50 20 C 50 20, 55 5, 70 15 C 90 30, 80 50, 50 80"
+                            fill="rgba(154, 176, 152, 0.25)" />
+                    </svg>
+                </div>
+                <div class="calendar-decoration calendar-dec-bottom-right">
+                    <svg width="60" height="60" viewBox="0 0 100 100">
+                        <path
+                            d="M50 80 C 20 50, 10 30, 30 15 C 45 5, 50 20, 50 20 C 50 20, 55 5, 70 15 C 90 30, 80 50, 50 80"
+                            fill="rgba(211, 122, 104, 0.2)" />
+                    </svg>
+                </div>
+
+                <div class="calendar-header">
+                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: normal;">Mai 2026</h3>
+                </div>
+
+                <div style="text-align: center; margin-bottom: 0.5rem; color: var(--accent-sage);">
+                    <svg width="150" height="15" viewBox="0 0 150 15" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path d="M20,8 Q75,15 130,8" />
+                        <circle cx="75" cy="11.5" r="2.5" fill="currentColor" />
+                        <path d="M45,10 Q40,2 35,8" />
+                        <path d="M105,10 Q110,2 115,8" />
+                    </svg>
+                </div>
+
+                <div class="calendar-grid" style="direction: ltr;">
+                    <div class="calendar-day-name">L</div>
+                    <div class="calendar-day-name">M</div>
+                    <div class="calendar-day-name">M</div>
+                    <div class="calendar-day-name">J</div>
+                    <div class="calendar-day-name">V</div>
+                    <div class="calendar-day-name">S</div>
+                    <div class="calendar-day-name">D</div>
+
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day">1</div>
+                    <div class="calendar-day">2</div>
+                    <div class="calendar-day">3</div>
+
+                    <div class="calendar-day">4</div>
+                    <div class="calendar-day">5</div>
+                    <div class="calendar-day">6</div>
+                    <div class="calendar-day">7</div>
+                    <div class="calendar-day">8</div>
+                    <div class="calendar-day">9</div>
+                    <div class="calendar-day">10</div>
+
+                    <div class="calendar-day">11</div>
+                    <div class="calendar-day">12</div>
+                    <div class="calendar-day">13</div>
+                    <div class="calendar-day">14</div>
+                    <div class="calendar-day">15</div>
+                    <div class="calendar-day">16</div>
+                    <div class="calendar-day">17</div>
+
+                    <div class="calendar-day">18</div>
+                    <div class="calendar-day">19</div>
+                    <div class="calendar-day highlight highlight-1">20</div>
+                    <div class="calendar-day">21</div>
+                    <div class="calendar-day highlight highlight-2">22</div>
+                    <div class="calendar-day">23</div>
+                    <div class="calendar-day">24</div>
+
+                    <div class="calendar-day">25</div>
+                    <div class="calendar-day">26</div>
+                    <div class="calendar-day">27</div>
+                    <div class="calendar-day">28</div>
+                    <div class="calendar-day">29</div>
+                    <div class="calendar-day">30</div>
+                    <div class="calendar-day">31</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="fade-in-section">
+        <h2 class="section-title">الاحتفالات</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">يومان من الاحتفال</p>
+
+        <div class="events-container">
+            <!-- Event 1 -->
+            <div class="event-card">
+                <h3 class="event-title script-text">الوطية</h3>
+                <p class="event-date">الأربعاء 20 ماي 2026</p>
+                <p class="event-time">8:00 مساءً</p>
+                <p class="event-location">Espace Podium - Gammarth</p>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="event-card">
+                <h3 class="event-title script-text">حفل الزفاف</h3>
+                <p class="event-date">الجمعة 22 ماي 2026</p>
+                <p class="event-time">5:00 مساءً - حتى 8:00 مساءً</p>
+                <p class="event-location">دار بوراوي ،قرطاج - Secret Garden</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="fade-in-section">
+        <h2 class="section-title">الجدول الزمني</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">الاحتفالات</p>
+
+        <div class="timeline-wrapper">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-time"> الاثنين 18 ماي - 7:00 مساء </div>
+                <div class="timeline-content">
+                    <h4>عشاء بمطعم Younga بالمحرس</h4>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-time"> الاربعاء 20 ماي - 8:00 مساء </div>
+                <div class="timeline-content">
+                    <h4>الوطية</h4>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-time"> الجمعة 22 ماي - 5:00 مساء </div>
+                <div class="timeline-content">
+                    <h4>مراسم الزفاف</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="fade-in-section">
+        <h2 class="section-title">المواقع</h2>
+        <div class="divider"></div>
+
+        <div class="map-container">
+            <div class="map-box">
+                <h4>الوطية</h4>
+                <iframe src="https://maps.google.com/maps?q=Espace+Podium+Gammarth&t=k&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%" height="300" style="border:0; border-radius: 5px; margin-bottom: 1rem;"
+                    allowfullscreen="" loading="lazy"></iframe>
+                <p class="address-text"><strong>Espace Podium</strong><br>قمرت، تونس</p>
+            </div>
+
+            <div class="map-box">
+                <h4>حفل الزفاف</h4>
+                <iframe src="https://maps.google.com/maps?q=Dar+Bouraoui+Carthage&t=k&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%" height="300" style="border:0; border-radius: 5px; margin-bottom: 1rem;"
+                    allowfullscreen="" loading="lazy"></iframe>
+                <p class="address-text"><strong>دار بوراوي - Secret Garden</strong><br>قرطاج، تونس</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="fade-in-section">
+        <h2 class="section-title">ذكريات</h2>
+        <div class="divider"></div>
+
+        <div class="polaroid-cord-wrapper">
+            <div class="polaroid-track">
+
+                <div class="polaroid-item">
+                    <div class="pin"></div>
+                    <img src="https://drive.google.com/thumbnail?id=1ccH-KntkE3gipo0P3pVEhkMx8LvNwrWV&sz=w900"
+                        alt="Couple 3">
+                </div>
+
+                <div class="polaroid-item">
+                    <div class="pin"></div>
+                    <img src="https://drive.google.com/thumbnail?id=1ZnPtLpwlH3uCMG_Evdq9smeROmF7kVpt&sz=w900"
+                        alt="Couple 1">
+                </div>
+
+                <div class="polaroid-item">
+                    <div class="pin"></div>
+                    <img src="https://drive.google.com/thumbnail?id=1yIoizFYq-nK51J-rOg4EAqDPcR1k1-xD&sz=w900"
+                        alt="Couple 2">
+                </div>
+
+                <div class="polaroid-item">
+                    <div class="pin"></div>
+                    <img src="https://drive.google.com/thumbnail?id=1vq3DunjIU4l27xeq5WnQRDjET73u5VRg&sz=w900"
+                        alt="Couple 4">
+                </div>
+
+                <div class="polaroid-item">
+                    <div class="pin"></div>
+                    <img src="https://drive.google.com/thumbnail?id=1SsrlLAaUkij-Gaj_C_UWX28elziG3FKD&sz=w900"
+                        alt="Couple 5">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h2 class="footer-names">علاء الدين ومشكاة</h2>
+        <p class="footer-text">لا يسعنا الانتظار للاحتفال معكم!</p>
+    </footer>
+
+    <!-- JavaScript for interactions -->
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Sticky Navbar styling on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.style.padding = '1rem 2rem';
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.padding = '1.5rem 2rem';
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+            }
+        });
+
+        // Fade-in animation on scroll using Intersection Observer
+        document.addEventListener("DOMContentLoaded", function () {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-section').forEach((section) => {
+                observer.observe(section);
+            });
+        });
+
+        // Envelope Animation Logic
+        document.addEventListener("DOMContentLoaded", function () {
+            const envelope = document.getElementById('envelope');
+            const overlay = document.getElementById('intro-overlay');
+            const butterfliesContainer = document.getElementById('butterflies-container');
+
+            const colors = ['#D37A68', '#9AB098', '#E6C79C', '#FAF9F6'];
+
+            if (envelope && overlay) {
+                envelope.addEventListener('click', function () {
+                    if (this.classList.contains('open')) return;
+
+                    this.classList.add('open');
+
+                    // Spawn Butterflies
+                    for (let i = 0; i < 7; i++) {
+                        const butterfly = document.createElement('div');
+                        butterfly.classList.add('butterfly');
+
+                        // Elegant Detailed Butterfly SVG
+                        butterfly.innerHTML = `<div class="wing-container"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50,50 C30,20 10,15 10,35 C10,50 25,60 40,55 C20,70 30,90 45,80 C48,70 48,60 50,50 Z M50,50 C70,20 90,15 90,35 C90,50 75,60 60,55 C80,70 70,90 55,80 C52,70 52,60 50,50 Z"/></svg></div>`;
+
+                        // Randomize elegant animation paths
+                        const tx = (Math.random() - 0.5) * 600 + 'px';
+                        const ty = (Math.random() - 1) * 600 - 200 + 'px';
+                        const r = (Math.random() * 60 - 30) + 'deg';
+                        const duration = (3.5 + Math.random() * 2) + 's'; // Slower, more graceful flight
+                        const color = colors[Math.floor(Math.random() * colors.length)];
+
+                        const delay = (Math.random() * 1.5 + 0.5) + 's'; // Starts after flap opens
+
+                        butterfly.style.setProperty('--tx', tx);
+                        butterfly.style.setProperty('--ty', ty);
+                        butterfly.style.setProperty('--r', r);
+                        butterfly.style.setProperty('--duration', duration);
+                        butterfly.style.setProperty('--color', color);
+                        butterfly.style.animationDelay = delay;
+                        // Use querySelector rather than style.animationDelay so the nested div doesn't get messed up
+
+                        butterfliesContainer.appendChild(butterfly);
+                    }
+
+                    // Allow the user to read the letter for 5.5 seconds before fading out
+                    setTimeout(() => {
+                        overlay.classList.add('fade-out');
+                        setTimeout(() => {
+                            overlay.style.display = 'none';
+                            document.body.classList.remove('intro-active');
+                            // Trigger fade in for the first section
+                            document.querySelectorAll('.fade-in-section').forEach(section => {
+                                const rect = section.getBoundingClientRect();
+                                if (rect.top < window.innerHeight) {
+                                    section.classList.add('is-visible');
+                                }
+                            });
+                        }, 1500);
+                    }, 5500); // 5.5 seconds total for reading the scroll and watching butterflies
+                });
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
